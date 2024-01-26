@@ -51,11 +51,15 @@ n_Elementos = int(input("Cuantos nombres quiere almacenar: "))
 lista = []
 
 for i in range(n_Elementos):
-    elemento = str(input(f"Ingrese el {i + 1} nombre: "))
+    elemento = str(input(f"Ingrese el nombre {i + 1}: "))
     lista.append(elemento)
-
+##Ejemplo de crear lista con bucles
+    
 
 # Imprimir la lista y la suma
 print("Lista ingresada:", lista)
 
 ## Desarrollado por Eduar Damian Chanaga GOnzalez - 1095581647
+
+
+
