@@ -27,17 +27,26 @@ while (Decision=="si" or Decision == "Si"):
             n = int(input("--> "))
             if n > 0:
                 break  #Sirve para que en un (while True) se ejecute hasta llegar a esta linea de codigo
+            elif n==0:
+                break
             else:
                 print("Por favor, ingrese un número entero mayor que 0.")
+              
         except ValueError:
             print("Por favor, ingrese un número entero válido.")
 
             #Try ejecuta una serie de codigo y si se detecta un error no va a cerrar el programa,
             #al encontrar un error se ejecutara el except valueError
 
-
-    print("Termino 1: 0")
-    print("Termino 2: 1")
+    if n==0:
+        break
+    elif n > 1:
+        print("Termino 1: 0")
+        print("Termino 2: 1")    
+    elif n == 1:  
+        print("Termino 1: 0")
+        
+   
     for i in range(1, n-1):
         fibonacci_secuencia = fibonacci(i)
         print(f"Término {i+2}: {fibonacci_secuencia[-1]}")
