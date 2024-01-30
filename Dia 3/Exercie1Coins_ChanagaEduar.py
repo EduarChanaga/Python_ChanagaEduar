@@ -6,13 +6,10 @@
 def coins(amount): 
     i = 0
     coins_10 = amount // 10 ##calcula la cantidad de monedas de 10
-    print("10:", coins_10)
     amount %= 10 #$Saca el sobrante del paso anterior
     coins_5 = amount // 5
-    print("5:", coins_5) ##calcula la cantidad de monedas de 5.
     amount %= 5 #Saca el sobrante al paso anterior.
     coins_1 = amount
-    print("1:", coins_1) #Todo lo sobrante lo convierte en monedas de 1.
     print("coins =", coins_1 + coins_5 + coins_10)
     count = []
             ###Contar y agregar a una lista la cantidad de monedas.
