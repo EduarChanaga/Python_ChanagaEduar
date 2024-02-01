@@ -33,3 +33,4 @@ while True:
     print("Resultado MCD:", gcd_me2)
 
 
+## Desarrollado por Eduar Damian Chanaga GOnzalez - 1095581647

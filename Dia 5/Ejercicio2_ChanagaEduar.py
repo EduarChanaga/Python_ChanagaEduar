@@ -56,3 +56,5 @@ while True:
     print("Output")
     for i in range(me):
         print(f"{menor[i]} {mayor[i]}")
+## Desarrollado por Eduar Damian Chanaga GOnzalez - 1095581647
+## Desarrollado por Hernan Mendez Guerrero - 1101685607
