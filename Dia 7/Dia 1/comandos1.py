@@ -1,4 +1,4 @@
-def main():
+def main(Entradausuario,EntradausuarioNumero):
     ##-----------------------
     ##-----Ejercicio 1-------
     ##-----------------------
@@ -29,11 +29,7 @@ def main():
     print(type(booleano))
     #----- Entradas por parte del usuario con definicion de tipo de dato primitivo ----
 
-    Entradausuario = str(input("Ingresa tu nombre -> "))
     print (f"Tu nombre es: {Entradausuario} ")
-
-
-    EntradausuarioNumero = int(input("Ingresa tu edad -> "))
     print (f"Tu edad es: {EntradausuarioNumero} ")
     #---- Siclos ----
     #ciclo for
@@ -53,13 +49,13 @@ def main():
         print("No soy campus")
     ## Desarrollado por Eduar Damian Chanaga GOnzalez - 1095581647
         
-def parametros ():
+def parametros (nombre,edad):
     ##--------------------------------------------------
     ##----- Ejercicio1_Sin_Parametro_Sin_Retorno -------
     ##--------------------------------------------------
     def diHola():
-        print("Hola usuario")
-        nombre=str(input("Ingrese su nombre ->"))
+        
+        
         print(f"Bienvenido {nombre}")
 
     diHola()  
@@ -70,7 +66,6 @@ def parametros ():
 
     def holaConNombre(edad):
         print(f"edad: {edad}")
-    edad=int(input("Ingrese su edad -> "))
     holaConNombre(edad) 
 
     ##--------------------------------------------------
