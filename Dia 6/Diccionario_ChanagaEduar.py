@@ -4,6 +4,7 @@ panaderia = {"inventario": ("rosquilla", "cascarita", "churros", "pan de queso")
             }
 
 # Muestra el menú
+print("Bienvenido a la panaderia :3")
 print("Menu actual:")
 print(panaderia)
 
@@ -21,3 +22,5 @@ if p in panaderia["inventario"]:
     print(f"Producto: {p}\n Precio: {precio*c}\n Cantidad: {c}")
 else:
     print(f"{p} no está en el inventario.")
+
+## Desarrollado por Eduar Damian Chanaga GOnzalez - 1095581647

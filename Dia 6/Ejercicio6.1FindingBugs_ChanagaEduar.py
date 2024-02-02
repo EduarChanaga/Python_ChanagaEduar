@@ -15,3 +15,5 @@ print("b in big:", big)                             #print "b in big:",big
 #1. Definir un valor para b
 #2. Llamar a la función negate con el valor de b y asignar el resultado a neg_b
 #3. Llamar a la función large_num con el valor de b y asignar el resultado a big
+
+## Desarrollado por Eduar Damian Chanaga GOnzalez - 1095581647
