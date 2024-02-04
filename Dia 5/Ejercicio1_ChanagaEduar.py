@@ -24,4 +24,6 @@ for z in range(0, T, 1):
     print(f"Case #{z+1}: {found_pairs2[z]}")
 
 ## Desarrollado por Eduar Damian Chanaga GOnzalez - 1095581647
-## Desarrollado por Hernan Mendez Guerrero - 1101685607
+##Hernan Mendez Guerrero 
+##Juan David Rivero
+####Kenia Hernandez
