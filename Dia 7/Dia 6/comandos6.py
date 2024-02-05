@@ -40,9 +40,7 @@ def bolas():
     
 def diccionario(panaderia):
     # Almacena los productos con su respectivo precio en un diccionario.
-    panaderia = {"inventario": ("rosquilla", "cascarita", "churros", "pan de queso"),
-                "Precios": (3000, 1000, 2500, 2000)
-                }
+    
 
     # Muestra el menú
     print("Bienvenido a la panaderia :3")
@@ -132,7 +130,7 @@ def mutability():
 
     ## Desarrollado por Eduar Damian Chanaga GOnzalez - 1095581647    
 #---------------------------------------------------------------------------------------------------------_#
-def listas():
+def listas(listao,Tupla, Diccionario, conjunto):
 
         #----------- Lista [] list()--------------
         #Las listas se pueden modificar

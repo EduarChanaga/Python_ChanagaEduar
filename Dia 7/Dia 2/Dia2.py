@@ -21,5 +21,6 @@ while True:
         print("Tendra 10 intentos maximos para hallar el resultado.")
         print("-----------")
         print(comandos2.juegoiteractivo ())
+        
     else:
         print("Tarea no registrada")
