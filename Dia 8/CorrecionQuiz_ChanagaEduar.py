@@ -7,17 +7,16 @@ def calcular_definitiva(lista):
     sumatoria = sum(lista)
     return sumatoria
 
+lista2= []  # Definir lista2 fuera del bucle for
+
 for i in range(5):
     print("Estudiante#", i+1)
     lista = []
-    notaMayor = 0
     definitiva = 0
     for j in range(3):
         numerito = float(input("Ingresa tu nota: "))
         print(numerito)
         definitiva += numerito
-        if numerito > notaMayor:
-            notaMayor = numerito
         lista.append(numerito)
     print(lista)
     # Llamar a la función para calcular la nota definitiva
@@ -29,4 +28,6 @@ for i in range(5):
         print("Pues... todo bien... recupera")
     elif definitiva > 4.5:
         print("¡Excelente estudiante! Eres ejemplar")
+    lista2.append(definitiva)  # Agregar la definitiva a lista2
     print(lista)
+print(lista2)
