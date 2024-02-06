@@ -31,3 +31,12 @@ for i in range(5):
     lista2.append(definitiva)  # Agregar la definitiva a lista2
     print(lista)
 print(lista2)
+
+mayor=lista2[0]
+
+for elemento in lista2:
+    if elemento > mayor:
+        mayor = elemento
+
+
+print("La nota mayor es: ", mayor)
