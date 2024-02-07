@@ -1,0 +1,18 @@
+pedidos_ordenados = sorted(pedidos, key=lambda x: x['fecha'], reverse=True)
+'''
+esta línea de código utiliza la función sorted() de Python para ordenar una lista de diccionarios llamada pedidos según el valor de la clave 'fecha' de cada diccionario. Aquí hay un desglose de la línea de código:
+
+sorted(): Esta es una función incorporada en Python que ordena los elementos de una secuencia (por ejemplo, una lista, una tupla) y devuelve una lista ordenada.
+
+pedidos: Es la lista que se va a ordenar. En este caso, parece ser una lista de diccionarios.
+
+key=lambda x: x['fecha']: Este es un argumento de la función sorted(). Le indica a Python cómo debe comparar los elementos de la lista para determinar su orden. En este caso, se está utilizando una función lambda para especificar que se debe usar el valor de la clave 'fecha' de cada diccionario como el criterio de ordenación.
+
+reverse=True: Este es otro argumento opcional de la función sorted(). Si está establecido en True, indica que los elementos deben ser ordenados en orden descendente, es decir, del más grande al más pequeño. En este caso, se están ordenando los pedidos según la fecha en orden descendente, lo que significa que los pedidos más recientes aparecerán primero en la lista.
+
+Entonces, en resumen, esta línea de código crea una nueva lista llamada pedidos_ordenados que contiene los elementos de la lista pedidos, pero ordenados de acuerdo a la fecha de cada pedido, con los pedidos más recientes primero.
+
+La primera instancia de x es un parámetro de la función lambda. Este x representa cada elemento individual de la lista pedidos mientras sorted() itera sobre ella. En otras palabras, x es una variable temporal que toma el valor de cada elemento de la lista durante el proceso de ordenamiento.
+
+La segunda instancia de x es parte de la expresión x['fecha'], que accede al valor asociado a la clave 'fecha' dentro de cada diccionario de la lista pedidos. Aquí, x se refiere a cada elemento individual de la lista pedidos, que es un diccionario. Por lo tanto, x['fecha'] accede al valor asociado con la clave 'fecha' en ese diccionario específico.
+'''
