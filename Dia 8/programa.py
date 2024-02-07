@@ -25,9 +25,15 @@ for i in pedidos_mayorvalor[:2]:
     print(i)
 lista_ids_clientes=[]
 print("")
+
+
+lista_ids_clientes = []
+for pedido in pedidos:
+    id_cliente = pedido["id_cliente"]
+    if id_cliente not in lista_ids_clientes:
+        lista_ids_clientes.append(id_cliente)
+
 print("Los clientes que han realizado compras son:")
-for i in pedidos:
-    lista_ids_clientes.append(i["id_cliente"])  #falta eliminar iguales
 print(lista_ids_clientes)
 
 # Imprimimos la lista de IDs de los clientes
