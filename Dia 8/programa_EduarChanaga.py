@@ -17,6 +17,7 @@ comerciales = diccionario["ventas"]["comerciales"]
 clientes = diccionario["ventas"]["clientes"]
 
 while True:
+    print("")
     print("Que desea realizar?")
     print("1. Ejecutar")
     print("2. Modificar")
@@ -165,7 +166,7 @@ while True:
 ######################### MODIFICAR DATOS #########################
         print("1. Modificar datos de cliente ( Nombre/Apellido/Apellido2/ciudad )")
         print("2. Modificar pedidos ( Total / fecha )")
-        decision4=int(input("-->"))
+        decision4=int(input("--> "))
         if decision4==1:
             id_cliente_mod=int(input("Id del usuario a modificar: "))
             nombre_cliente_mod=str(input("Nombre: "))
@@ -185,17 +186,17 @@ while True:
 
         if decision4==2:
             id_cliente_mod=int(input("Id del pedido a modificar: "))
-            print("fecha = año-mes-dia")
+            
             total_pedido_mod=float(input("Total: "))
-            año_pedido_mod=int(input("Año: "))
-            mes_pedido_mod=int(input("Mes: "))
-            Dia_pedido_mod=int(input("Dia: "))
+            print("fecha = año-mes-dia Ej: (2018-10-06)")
+            fecha_pedido_mod=str(input("Fecha: "))
+
             
     # Iterar sobre la lista de clientes y modificar los nombres
             for pedido in diccionario['ventas']['pedidos']:
                 if pedido['id'] == id_cliente_mod:  # Modificar el nombre del cliente con ID 4
-                    pedido['Total'] = total_pedido_mod
-                    pedido["fecha"]=año_pedido_mod+"-"+mes_pedido_mod+"-"+Dia_pedido_mod
+                    pedido['total'] = total_pedido_mod
+                    pedido["fecha"]=fecha_pedido_mod
   
             # Guardar los cambios en el mismo JSON (sobreescribir)
             with open('datos.json', 'w') as file:

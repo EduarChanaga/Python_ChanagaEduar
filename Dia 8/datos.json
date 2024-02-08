@@ -3,11 +3,11 @@
     "clientes": [
       {
         "id": 4,
-        "nombre": "Hernan",
-        "apellido1": "Mendez",
-        "ciudad": "Ja\u00e9n",
+        "nombre": "Ruitoque",
+        "apellido1": "Alto",
+        "ciudad": "venezuela",
         "categor\u00eda": 300,
-        "apellido2": "Guerrero"
+        "apellido2": "Condominio"
       },
       {
         "id": 5,
@@ -104,15 +104,16 @@
     "pedidos": [
       {
         "id": 3,
-        "total": 65.26,
-        "fecha": "2017-10-05",
+        "total": 100.0,
+        "fecha": "2020-01-20",
         "id_cliente": 2,
-        "id_comercial": 1
+        "id_comercial": 1,
+        "Total": 100.0
       },
       {
         "id": 4,
-        "total": 110.5,
-        "fecha": "2016-08-17",
+        "total": 1120.0,
+        "fecha": "2023-07-26",
         "id_cliente": 8,
         "id_comercial": 3
       },
