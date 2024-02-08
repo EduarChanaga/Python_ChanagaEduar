@@ -48,7 +48,7 @@ while True:
         print(lista_ids_clientes)
     elif decision==4:##############################################################################################################################
         # Filtrar los pedidos que se realizaron en <link>2017</link> y cuya cantidad total sea superior a 500€
-        pedidos_2017_mayor_500 = [pedido for pedido in pedidos if pedido["fecha"].startswith("2017") and pedido["total"] > 500]                 
+        pedidos_2017_mayor_500 = [i for i in pedidos if i["fecha"].startswith("2017") and i["total"] > 500]                 
         #El método ".startswith()" es una función integrada de Python que se utiliza para verificar si una cadena de texto comienza con ciertos caracteres específicos. Su sintaxis es la siguiente
         print("")  
         # Imprimir los pedidos que cumplen con los criterios
@@ -58,19 +58,19 @@ while True:
     elif decision==5:##############################################################################################################################
         # Imprimir los nombres y apellidos de los comerciales seleccionados
         print("")
-        comerciales_seleccionados = [comercial for comercial in comerciales if 0.05 <= comercial["comision"] <= 0.11]
+        comerciales_seleccionados = [i for i in comerciales if 0.05 <= i["comision"] <= 0.11]
         print("Los comerciales con comisión entre 0.05 y 0.11 son:")
-        for comercial in comerciales_seleccionados:
-            nombre = comercial["nombre"]
-            apellido1 = comercial["apellido1"]
-            apellido2 = comercial.get("apellido2", "")  # Si no hay segundo apellido, se asigna una cadena vacía
+        for i in comerciales_seleccionados:
+            nombre = i["nombre"]
+            apellido1 = i["apellido1"]
+            apellido2 = i.get("apellido2", "")  # Si no hay segundo apellido, se asigna una cadena vacía
             print(f"{nombre} {apellido1} {apellido2}")
     elif decision==6:##############################################################################################################################
         # Inicializar el valor máximo de la comisión
         max_comision = float('-inf')  # Inicializado con el valor negativo infinito
         # Iterar sobre la lista de comerciales y actualizar el valor máximo de la comisión
-        for comercial in comerciales:
-            comision = comercial.get("comision", 0)  # Si no hay comisión, se asigna un valor predeterminado de 0
+        for i in comerciales:
+            comision = i.get("comision", 0)  # Si no hay comisión, se asigna un valor predeterminado de 0
             if comision > max_comision:
                 max_comision = comision
 
@@ -80,32 +80,32 @@ while True:
         print("")
     elif decision==7:##############################################################################################################################
         # Filtrar los clientes cuya ciudad sea "Sevilla"
-        clientes_sevilla = [cliente for cliente in clientes if cliente.get("ciudad", "") == "Sevilla"]
+        clientes_sevilla = [i for i in clientes if i.get("ciudad", "") == "Sevilla"]
 
         # Ordenar los clientes alfabéticamente por apellidos y nombre
         clientes_sevilla_ordenados = sorted(clientes_sevilla, key=lambda x: (x["apellido1"], x["nombre"]))
 
         # Imprimir el identificador, nombre y primer apellido de los clientes de Sevilla ordenados
         print("Clientes de Sevilla ordenados alfabéticamente por apellidos y nombre:")
-        for cliente in clientes_sevilla_ordenados:
-            identificador = cliente["id"]
-            nombre = cliente["nombre"]
-            apellido1 = cliente["apellido1"]
+        for i in clientes_sevilla_ordenados:
+            identificador = i["id"]
+            nombre = i["nombre"]
+            apellido1 = i["apellido1"]
             print(f"ID: {identificador}, Nombre: {nombre}, Apellido: {apellido1}")
     elif decision==8:##############################################################################################################################
         # Filtrar los nombres que empiezan por "A" y terminan por "n"
-        nombres_A_n = [cliente["nombre"] for cliente in clientes if cliente["nombre"].startswith("A") and cliente["nombre"].endswith("n")]
+        nombres_A_n = [i["nombre"] for i in clientes if i["nombre"].startswith("A") and i["nombre"].endswith("n")]
 
         # Filtrar los nombres que empiezan por "P"
-        nombres_P = [cliente["nombre"] for cliente in clientes if cliente["nombre"].startswith("P")]
+        nombres_P = [i["nombre"] for i in clientes if i["nombre"].startswith("P")]
 
         # Combinar y ordenar alfabéticamente los nombres de ambos grupos
         nombres_ordenados = sorted(nombres_A_n + nombres_P)
         print("")
         # Imprimir el listado de nombres ordenados alfabéticamente
         print("Listado de nombres de clientes que empiezan por A y terminan por n, o empiezan por P:")
-        for nombre in nombres_ordenados:
-            print(nombre)
+        for i in nombres_ordenados:
+            print(i)
 
 
         
