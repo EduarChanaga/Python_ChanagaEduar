@@ -108,20 +108,22 @@ while True:
             print(nombre)
 
 
-        nombres_A_n = [cliente["nombre"] for cliente in clientes if cliente["nombre"].startswith("A")]
+        
     elif decision==9:##############################################################################################################################
         # Imprimir el listado de nombres ordenados alfabéticamente
+        nombres_A_n = [cliente["nombre"] for cliente in clientes if cliente["nombre"].startswith("A")]
         print("")
         print("Listado de nombres de clientes que empiezan por A ")
         for nombre in nombres_A_n:
             print(nombre)
 
 
-        # Filtrar los comerciales cuyo apellido sea "Ruiz" y obtener sus nombres
-        nombres_ruiz = {comercial["nombre"] for comercial in comerciales if comercial.get("apellido1", "") == "Ruiz"}
+    
 
         # Imprimir el listado de nombres de los comerciales que tienen como apellido "Ruiz"
     elif decision==10:##############################################################################################################################
+    # Filtrar los comerciales cuyo apellido sea "Ruiz" y obtener sus nombres
+        nombres_ruiz = {comercial["nombre"] for comercial in comerciales if comercial.get("apellido1", "") == "Ruiz"}
         print("")
         print("Listado de nombres de comerciales con apellido 'Ruiz':")
         for nombre in nombres_ruiz:
