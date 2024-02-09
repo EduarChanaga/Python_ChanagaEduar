@@ -60,10 +60,10 @@
     "comerciales": [
       {
         "id": 3,
-        "nombre": "Diego",
-        "apellido1": "Flores",
-        "apellido2": "Salas",
-        "comision": 0.11
+        "nombre": "Andrea",
+        "apellido1": "Chanaga",
+        "apellido2": "Gonzalez",
+        "comision": 0.2
       },
       {
         "id": 4,
