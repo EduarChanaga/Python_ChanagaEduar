@@ -46,6 +46,15 @@ def agregar_pedido_para_cliente_existente(id_cliente, nuevo_pedido):
     else:
         print(f"No se encontró ningún cliente con el ID {id_cliente}")
 
+# Función para agregar un nuevo comercial
+def agregar_nuevo_comercial(nuevo_comercial):
+    # Obtener la lista de comerciales y agregar el nuevo comercial
+    diccionario['ventas']['comerciales'].append(nuevo_comercial)
+
+def eliminar_comercial_por_id(id_comercial):
+    # Filtrar los comerciales que no tengan el ID proporcionado
+    diccionario['ventas']['comerciales'] = [comercial for comercial in diccionario['ventas']['comerciales'] if comercial['id'] != id_comercial]
+
 #################################### Impresion de los datos solicitados en la tarea 8 ##################################################
 # Acceder a la parte de "pedidos" dentro de "ventas"
 pedidos = diccionario["ventas"]["pedidos"]
@@ -266,7 +275,7 @@ while True:
                     if comision_comercial_mod < 1 :
                         break  
                     else:
-                        print("Por favor digite una comision menor a 0")
+                        print("Por favor digite una comision menor a 1")
                 except ValueError:
                     print(" ")            
     # Iterar sobre la lista de clientes y modificar los nombres
@@ -290,6 +299,7 @@ while True:
     elif decision3==3:
         print("1. Eliminar datos de cliente segun id")
         print("2. Eliminar pedido")
+        print("3. Eliminar comercial")
         decision5=int(input("--> "))
         if decision5==1:
             id_cliente_a_eliminar=int(input("Id del cliente a eliminar: "))
@@ -307,6 +317,16 @@ while True:
             # Guardar los cambios en el archivo JSON
             with open('datos.json', 'w') as file:
                 json.dump(diccionario, file, indent=2)
+        if decision5==3:
+            # ID del comercial que deseas eliminar
+            id_comercial_a_eliminar = int(input("Ingrese la ID del comercial que desea eliminar: "))
+
+            # Eliminar el comercial por su ID
+            eliminar_comercial_por_id(id_comercial_a_eliminar)
+
+            # Guardar los cambios en el archivo JSON
+            with open('datos.json', 'w') as file:
+                json.dump(diccionario, file, indent=2)
 
 
 
@@ -316,6 +336,7 @@ while True:
     elif decision3==4: 
         print("1. Agregar nuevo cliente")
         print("2. Agregar nuevo pedido")
+        print("3. Agregar nuevo comercial")
         decision5=int(input("---> "))
         if decision5==1:
             id=int(input("Nueva id: "))
@@ -366,4 +387,33 @@ while True:
             with open('datos.json', 'w') as file:
                 json.dump(diccionario, file, indent=2)
 
+        if decision5==3:
+            id_new_comercial=int(input("Nueva id comercial: "))
+            name_new_comercial=str(input("Nombre comercial: "))
+            ap1_new_comercial=str(input("Apellido comercial: "))
+            ap2_new_comercial=str(input("Apellido 2 comercial: "))
+            while True:
+                try: #Comprobar que el numero este entre el rango 1-1000 y que no tenga decimales.
+                    comision_new_comercial=float(input("Comision comercial: "))
+                    if comision_new_comercial < 1 :
+                        break  
+                    else:
+                        print("Por favor digite una comision menor a 1")
+                except ValueError:
+                    print(" ")    
+            # Crear un nuevo comercial
+            nuevo_comercial = {
+                "id": id_new_comercial,
+                "nombre": name_new_comercial,
+                "apellido1": ap1_new_comercial,
+                "apellido2": ap2_new_comercial,
+                "comision": comision_new_comercial
+            }
+
+            # Agregar el nuevo comercial
+            agregar_nuevo_comercial(nuevo_comercial)
+
+            # Guardar los cambios en el archivo JSON
+            with open('datos.json', 'w') as file:
+                json.dump(diccionario, file, indent=2)
 ## Desarrollado por Eduar Damian Chanaga Gonzalez - 1095581647
