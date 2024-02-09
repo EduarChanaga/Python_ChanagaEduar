@@ -42,10 +42,10 @@
       },
       {
         "id": 9,
-        "nombre": "Valentina",
-        "apellido1": "Amaya",
-        "apellido2": "Fonseca",
-        "ciudad": "Granada",
+        "nombre": "Jorge",
+        "apellido1": "Pedrito",
+        "apellido2": "Anaya",
+        "ciudad": "giron",
         "categor\u00eda": 225
       },
       {
@@ -74,10 +74,10 @@
       },
       {
         "id": 5,
-        "nombre": "Antonio",
-        "apellido1": "Carretero",
-        "apellido2": "Ortega",
-        "comision": 0.12
+        "nombre": "To\u00f1ito",
+        "apellido1": "Mamerto",
+        "apellido2": "Putis",
+        "comision": 0.1
       },
       {
         "id": 6,

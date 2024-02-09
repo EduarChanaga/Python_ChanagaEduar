@@ -63,7 +63,7 @@ clientes = diccionario["ventas"]["clientes"]
 
 while True:
     print("")
-    print("Que desea realizar?")
+    print("\033[1;90mQue desea realizar?")
     print("1. Mostrar")
     print("2. Modificar")
     print("3. Eliminar")
@@ -216,11 +216,15 @@ while True:
 
 
 ######################### MODIFICAR clientes #########################
-        print("1. Modificar datos de cliente ( Nombre/ Apellido/ Apellido2/ ciudad )")
+        print("\033[93m1. Modificar datos de cliente ( Nombre/ Apellido/ Apellido2/ ciudad )")
         print("2. Modificar pedidos ( Total / fecha )")
         print("3. Modificar datos de comerciales ( nombre / apellido1 / apellido2 / comision )")
+        print("4. Salir")
         decision4=int(input("--> "))
         if decision4==1:
+            for i in clientes:
+                            print(i)
+            print("")
             id_cliente_mod=int(input("Id del usuario a modificar: "))
             nombre_cliente_mod=str(input("Nombre: "))
             apellido_cliente_mod=str(input("Apellido: "))
@@ -241,6 +245,9 @@ while True:
 
 ######################### MODIFICAR pedidos #########################
         if decision4==2:
+            for i in pedidos:
+                            print(i)
+            print("")
             id_cliente_mod=int(input("Id del pedido a modificar: "))
             
             total_pedido_mod=float(input("Total: "))
@@ -263,6 +270,9 @@ while True:
 
 ######################### MODIFICAR comerciales #########################
         if decision4==3:
+            for i in comerciales:
+                            print(i)
+            print("")
             id_comercial_mod=int(input("Id del comercial: "))
             
             nombre_comercial_mod=str(input("Nombre del comercial: "))
@@ -271,7 +281,7 @@ while True:
 
             while True:
                 try: #Comprobar que el numero este entre el rango 1-1000 y que no tenga decimales.
-                    comision_comercial_mod=float(input("Comision -1: "))
+                    comision_comercial_mod=float(input("Comision < 1: "))
                     if comision_comercial_mod < 1 :
                         break  
                     else:
@@ -289,7 +299,8 @@ while True:
             # Guardar los cambios en el mismo JSON (sobreescribir)
             with open('datos.json', 'w') as file:
                 json.dump(diccionario, file, indent=2)
-
+        if decision4==4:
+            print("")
 
 
 
@@ -297,11 +308,15 @@ while True:
 
 ############################################ ELIMINAR ############################################
     elif decision3==3:
-        print("1. Eliminar datos de cliente segun id")
+        print("\033[91m1. Eliminar datos de cliente segun id")
         print("2. Eliminar pedido")
         print("3. Eliminar comercial")
+        print("4. Salir")
         decision5=int(input("--> "))
         if decision5==1:
+            for i in clientes:
+                print(i)
+            print("")
             id_cliente_a_eliminar=int(input("Id del cliente a eliminar: "))
             eliminar_cliente_por_id(id_cliente_a_eliminar)
             with open('datos.json', 'w') as file:
@@ -309,6 +324,9 @@ while True:
 
         if decision5==2:
             # ID del pedido que deseas eliminar
+            for i in pedidos:
+                print(i)
+            print("")
             id_pedido_a_eliminar = int(input("ID del pedido que desea eliminar: "))
 
             # Eliminar el pedido por su ID
@@ -319,6 +337,9 @@ while True:
                 json.dump(diccionario, file, indent=2)
         if decision5==3:
             # ID del comercial que deseas eliminar
+            for i in comerciales:
+                print(i)
+            print("")
             id_comercial_a_eliminar = int(input("Ingrese la ID del comercial que desea eliminar: "))
 
             # Eliminar el comercial por su ID
@@ -329,16 +350,23 @@ while True:
                 json.dump(diccionario, file, indent=2)
 
 
+        if decision5==4:
+            print("")
+
 
 
 
 ############################################ AGREGAR ############################################
     elif decision3==4: 
-        print("1. Agregar nuevo cliente")
+        print("\033[92m1. Agregar nuevo cliente")
         print("2. Agregar nuevo pedido")
         print("3. Agregar nuevo comercial")
+        print("4. Salir")
         decision5=int(input("---> "))
         if decision5==1:
+            for i in clientes:
+                print(i)
+            print("")
             id=int(input("Nueva id: "))
             name=str(input("Nombre cliente: "))
             ape1=str(input("Apellido cliente: "))
@@ -362,6 +390,9 @@ while True:
                 json.dump(diccionario, file, indent=2)
 
         if decision5==2:
+            for i in pedidos:
+                print(i)
+            print("")
             # ID del cliente existente para el cual deseas agregar el pedido
             id_cliente_existente = int(input("ID cliente que realiza el pedido:"))
             # Crear un nuevo pedido
@@ -388,6 +419,9 @@ while True:
                 json.dump(diccionario, file, indent=2)
 
         if decision5==3:
+            for i in comerciales:
+                print(i)
+            print("")
             id_new_comercial=int(input("Nueva id comercial: "))
             name_new_comercial=str(input("Nombre comercial: "))
             ap1_new_comercial=str(input("Apellido comercial: "))
@@ -416,4 +450,6 @@ while True:
             # Guardar los cambios en el archivo JSON
             with open('datos.json', 'w') as file:
                 json.dump(diccionario, file, indent=2)
+        if decision5==4:
+            print("")
 ## Desarrollado por Eduar Damian Chanaga Gonzalez - 1095581647
